@@ -1,3 +1,5 @@
+import sys
+
 def generar_subconjuntos(n):
 
     """
@@ -97,15 +99,16 @@ if __name__ == "__main__":
         
         opcion = input("\nElige una opción (1-3): ").strip()
         
-        if opcion == "1":
-            mostrar_subconjuntos()
-        elif opcion == "2":
-            mostrar_teoria()
-        elif opcion == "3":
-            print(" ¡Hasta luego")
-            break
-        else:
-            print(" Opción inválida. Por favor, elige 1, 2 o 3.")
+        match opcion:
+            case "1":
+                mostrar_subconjuntos()
+            case "2":
+                mostrar_teoria()
+            case "3":
+                print(" ¡Hasta luego")
+                sys.exit(0)
+            case _:
+                print(" Opción inválida. Por favor, elige 1, 2 o 3.")
 
             
             
